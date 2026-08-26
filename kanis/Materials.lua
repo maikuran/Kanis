@@ -36,13 +36,13 @@ local materials_def = {
 }
 
 for _, mat in ipairs(materials_def) do
-    -- ベースとなるアイテム、液体、そしてパーツ用のテクスチャを colorize で動적生成
-    local base_item_img = "default_steel_ingot.png^[colorize:" .. mat.color .. ":160"
-    local fluid_img = "default_lava.png^[colorize:" .. mat.color .. ":200"
+    -- Mineclonia / mcl_core のテクスチャをベースに使用
+    local base_item_img = "mcl_core_iron_ingot.png^[colorize:" .. mat.color .. ":160"
+    local fluid_img = "mcl_core_lava_source.png^[colorize:" .. mat.color .. ":200"
     
-    -- パーツ用テクスチャ（既存の鉄ツールなどのパーツ形状をベースに着色して流用）
-    local head_texture = "default_tool_steelpick.png^[colorize:" .. mat.color .. ":180"
-    local handle_texture = "default_stick.png^[colorize:" .. mat.color .. ":100"
+    -- パーツ用テクスチャ（Minecloniaの鉄ピッケルと木の棒のテクスチャをベースに流用）
+    local head_texture = "mcl_tools_iron_pickaxe.png^[colorize:" .. mat.color .. ":180"
+    local handle_texture = "mcl_core_stick.png^[colorize:" .. mat.color .. ":100"
 
     -- 1. Melternsの流体（液体金属）登録
     if melterns and melterns.register_fluid then
@@ -69,12 +69,12 @@ for _, mat in ipairs(materials_def) do
                     mining_speed = tool_speed * 3.0,
                     harvest_level = mat.is_nether and 4 or 3,
                     damage = head_damage,
-                    texture = head_texture, -- パーツのテクスチャを指定
+                    texture = head_texture,
                 },
                 handle = {
                     durability_modifier = mat.is_nether and 1.3 or 1.1,
                     speed_modifier = tool_speed / 1.5,
-                    texture = handle_texture, -- ハンドルパーツのテクスチャを指定
+                    texture = handle_texture,
                 },
             },
             smelting = {
