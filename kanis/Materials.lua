@@ -4,7 +4,7 @@ local materials_def = {
     {
         id = "kanilite",
         name = "カニライト (Kanilite)",
-        color = "#ff66aa", -- ピンクに変更
+        color = "#ff66aa", -- ピンク
         sword_stats = { damage = 6.5, speed = 1.72, durability = 892 },
         is_nether = false,
         temp = 800,
@@ -12,7 +12,7 @@ local materials_def = {
     {
         id = "hachilite",
         name = "ハチライト (Hachilite)",
-        color = "#55eeff", -- 水色に変更
+        color = "#55eeff", -- 水色
         sword_stats = { damage = 7.5, speed = 1.6, durability = 1432 },
         is_nether = false,
         temp = 950,
